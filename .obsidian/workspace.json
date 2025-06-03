@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "ef6564bea748cebf",
+    "type": "split",
+    "children": [
+      {
+        "id": "50432847e31da7a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "116a0a5f1d913d8a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Paper阅读/2024-NevIR-Negation in Neural Information Retrieval.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2024-NevIR-Negation in Neural Information Retrieval"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a29dfcc4aa220dd1",
+    "type": "split",
+    "children": [
+      {
+        "id": "cebfd36fd930ca25",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f305c15db148692",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabeticalReverse",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "327752c39de3375b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "37426dff03fba1bf",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "b15f1f4df7facc89",
+    "type": "split",
+    "children": [
+      {
+        "id": "280849252a3c3c58",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0b9e3515558135c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Paper阅读/2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction 的反向链接列表"
+            }
+          },
+          {
+            "id": "7b619155bc40df1d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Paper阅读/2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction 的出链列表"
+            }
+          },
+          {
+            "id": "5fe9120b1e219fbe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "3eee168388d5a6ca",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Paper阅读/2024-NevIR-Negation in Neural Information Retrieval.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2024-NevIR-Negation in Neural Information Retrieval 的大纲"
+            }
+          },
+          {
+            "id": "3ff430277036b302",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 414.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
+      "markdown-importer:打开 Markdown 格式转换器": false
+    }
+  },
+  "active": "116a0a5f1d913d8a",
+  "lastOpenFiles": [
+    "Paper阅读/2025-FOLLOWIR-Evaluating and Teaching Information Retrieval Models to Follow Instructions.md",
+    "Paper阅读/2025-BEMEAE-Moving Beyond Exact Span Match for Event Argument Extraction.md",
+    "Paper阅读/2024-Paraphrasing in Affirmative Terms Improves Negation Understanding.md",
+    "Paper阅读/2024-NevIR-Negation in Neural Information Retrieval.md",
+    "Paper阅读/2025-Making Language Models Robust Against Negation.md",
+    "Paper阅读/2024-Having Beer after Prayer- Measuring Cultural Bias in Large Language Models.md",
+    "Paper阅读/2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction.md",
+    "NLP/BART & BERT & RoBERTa.md",
+    "Paper阅读/2024-Asking and Answering Questions to Extract Event-Argument Structures.md",
+    "Machine Learning/weak supervision.md",
+    "Paper Review/2025-审稿-DebugMate.md",
+    "Paper Review",
+    "Paper阅读/未命名",
+    "NLP/Event Argument Extraction (EAE) Task.md",
+    "NLP/NLP Concepts.md",
+    "AI/GAI.md",
+    "AI",
+    "我的第一篇笔记.md",
+    "Machine Learning/Class Imbalance.md",
+    "高亮.md",
+    "Pasted image 20250518133321.png",
+    "欢迎.md",
+    "Paper阅读",
+    "Machine Learning",
+    "Math",
+    "推荐系统",
+    "Deep Learning",
+    "创建链接.md",
+    "未命名.canvas",
+    "NLP"
+  ]
+}
