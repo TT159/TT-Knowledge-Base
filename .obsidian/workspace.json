@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Paper阅读/2024-NevIR-Negation in Neural Information Retrieval.md",
+                "file": "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
                 "mode": "source",
                 "source": false
               },
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Paper阅读/2024-NevIR-Negation in Neural Information Retrieval.md",
+                "file": "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -184,17 +184,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "116a0a5f1d913d8a",
+  "active": "4f305c15db148692",
   "lastOpenFiles": [
-    "Paper阅读/2025-FOLLOWIR-Evaluating and Teaching Information Retrieval Models to Follow Instructions.md",
-    "Paper阅读/2025-BEMEAE-Moving Beyond Exact Span Match for Event Argument Extraction.md",
-    "Paper阅读/2024-Paraphrasing in Affirmative Terms Improves Negation Understanding.md",
-    "Paper阅读/2024-NevIR-Negation in Neural Information Retrieval.md",
-    "Paper阅读/2025-Making Language Models Robust Against Negation.md",
-    "Paper阅读/2024-Having Beer after Prayer- Measuring Cultural Bias in Large Language Models.md",
-    "Paper阅读/2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction.md",
+    "Paper Reading/2025-FOLLOWIR-Evaluating and Teaching Information Retrieval Models to Follow Instructions.md",
+    "Paper Reading/2025-BEMEAE-Moving Beyond Exact Span Match for Event Argument Extraction.md",
+    "Paper Reading/2024-Paraphrasing in Affirmative Terms Improves Negation Understanding.md",
+    "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
+    "Paper Reading/2025-Making Language Models Robust Against Negation.md",
+    "Paper Reading/2024-Having Beer after Prayer- Measuring Cultural Bias in Large Language Models.md",
+    "Paper Reading/2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction.md",
     "NLP/BART & BERT & RoBERTa.md",
-    "Paper阅读/2024-Asking and Answering Questions to Extract Event-Argument Structures.md",
+    "Paper Reading/2024-Asking and Answering Questions to Extract Event-Argument Structures.md",
     "Machine Learning/weak supervision.md",
     "Paper Review/2025-审稿-DebugMate.md",
     "Paper Review",
@@ -208,7 +208,7 @@
     "高亮.md",
     "Pasted image 20250518133321.png",
     "欢迎.md",
-    "Paper阅读",
+    "Paper Reading",
     "Machine Learning",
     "Math",
     "推荐系统",
