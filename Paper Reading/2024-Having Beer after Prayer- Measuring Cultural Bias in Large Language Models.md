@@ -16,6 +16,16 @@ Primary Objective:
  We thus **construct a new benchmark, CAMeL** (Cultural Appropriateness Measure Set for LMs), which consists of an extensive list of 20,368 Arab and Western entities extracted from Wikidata and CommonCrawl, covering eight entity types (i.e., person names, food dishes, beverages, clothing items, locations, authors, religious places of worship, and sports clubs), and an associated set of 628 naturally occurring prompts as contexts for those entities.
 
 
+- Developed **CAMeL**, the first large-scale benchmark for measuring cultural bias in LLMs, containing 628 naturally-occurring prompts from Twitter/X and 20,368 culturally relevant entities (e.g., names, foods, locations).
+- Designed two types of prompts: culturally contextualized (Arab-specific) and agnostic (neutral).
+- Created a **Cultural Bias Score (CBS)** based on language models’ preference for Western vs. Arab entities in text-infilling tasks.
+- Evaluated 16 LLMs (monolingual Arabic, multilingual) on tasks including story generation, NER, sentiment analysis, and text infilling.
+
+
+- Demonstrated that LLMs (even Arabic-specific ones) often prefer Western entities in culturally Arab contexts, with CBS scores of 40–65%.
+- Identified that training data is a major source of bias; Wikipedia is the most Western-centric.
+- Analyzed stereotype presence in story generation, showing negative stereotypes associated with Arab names (e.g., “poor,” “modest”).
+- Showed that prompt adaptation (N-shot demos) can reduce bias, while culture tokens have minimal effect.
 
  we discuss that the prevalence of Western content in Arabic corpora may be **a key contributor** to the observed biases in LMs.
 我们讨论了阿拉伯语语料库中西方内容的流行可能是观察到的语言模型偏差的关键因素。
@@ -283,6 +293,19 @@ CBS（Cultural Bias Score）= 1表示全选西方，0表示全选阿拉伯。
 
 ==Local news and Twitter/X corpora had the lowest CBS, suggesting that future work may consider these sources for training more culturally adapted LMs.==
 本地新闻和Twitter/X语料库的CBS最低，这表明未来的工作可以考虑这些来源来训练更具文化适应性的语言模型。
+
+
+## Limitations
+
+- Focused only on Arabic vs. Western cultural contexts.
+    
+- No evaluation of sub-regional or intra-cultural variations (e.g., within the Arab world).
+    
+- Primarily lexicon-level analysis, without assessing stylistic or deeper semantic features.
+    
+- Data limited to Twitter/X contexts; other platforms might exhibit different biases.
+
+
 
 ## Additional 
 

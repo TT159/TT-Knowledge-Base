@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
+                "file": "research notes/25-8-13-GPU Server.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-NevIR-Negation in Neural Information Retrieval"
+              "title": "25-8-13-GPU Server"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
+                "file": "research notes/25-7-14-week6-Coding.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2024-NevIR-Negation in Neural Information Retrieval 的大纲"
+              "title": "25-7-14-week6-Coding 的大纲"
             }
           },
           {
@@ -170,7 +170,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 414.5
+    "width": 414.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -184,37 +185,53 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "4f305c15db148692",
+  "active": "116a0a5f1d913d8a",
   "lastOpenFiles": [
-    "Paper Reading/2025-FOLLOWIR-Evaluating and Teaching Information Retrieval Models to Follow Instructions.md",
-    "Paper Reading/2025-BEMEAE-Moving Beyond Exact Span Match for Event Argument Extraction.md",
-    "Paper Reading/2024-Paraphrasing in Affirmative Terms Improves Negation Understanding.md",
-    "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
-    "Paper Reading/2025-Making Language Models Robust Against Negation.md",
-    "Paper Reading/2024-Having Beer after Prayer- Measuring Cultural Bias in Large Language Models.md",
-    "Paper Reading/2024-Generating Uncontextualized and Contextualized Questions for Document-Level Event Argument Extraction.md",
-    "NLP/BART & BERT & RoBERTa.md",
-    "Paper Reading/2024-Asking and Answering Questions to Extract Event-Argument Structures.md",
+    "Distribution of Negation Types (by sample count).png",
+    "Pasted image 20250630221745.png",
+    "research notes/25-8-13-GPU Server.md",
+    "research notes/25-8-9-提取完一次后分析.md",
+    "research notes/25-8-7-完善句子提取代码.md",
+    "research notes/25-7-17-Dataset-wikipedia sentence extraction.md",
+    "research notes/25-7-14-week6-CondaQA negation cues Coding.md",
+    "research notes/25-7-17-Extract Sentences from Wiki.md",
+    "Reinforcement Learning/0-在线学习资源.md",
+    "我的创作/风起于青萍之末-武大论杨某.md",
+    "Reinforcement Learning",
+    "US investment/美国报税.md",
+    "我的创作",
+    "US investment/投资的一些概念.md",
+    "US investment/投资美股的渠道.md",
+    "US investment",
+    "Machine Learning/weight-of-model.md",
+    "Machine Learning/Class Imbalance.md",
     "Machine Learning/weak supervision.md",
-    "Paper Review/2025-审稿-DebugMate.md",
+    "pipeline.canvas",
+    "Distribution of Negation Cue Types (by sample count).png",
+    "research notes/25-7-7-week5-Task define.md",
+    "Paper Reading/Datasets.md",
+    "Paper Reading/2024-Paraphrasing in Affirmative Terms Improves Negation Understanding.md",
+    "research notes",
+    "Paper Reading/2024-NevIR-Negation in Neural Information Retrieval.md",
+    "Paper Reading/2022-Leveraging Affirmative Interpretations from Negation Improves Natural Language Understanding.md",
+    "Paper Reading/2022-CondaQA-A Contrastive Reading Comprehension Dataset for Reasoning about Negation.md",
+    "Paper Reading/2023-ScoNe-Benchmarking Negation Reasoning in Language Models With Fine-Tuning and In-Context Learning.md",
+    "0-assets/NeQA Task Decomposition.png",
+    "0-assets/ScoNe.png",
+    "0-assets/Negation in LLM hallucinations.png",
+    "0-assets/NevIR.png",
+    "0-assets/NeQA different_prompts.png",
+    "NLP/NLP Concepts.md",
+    "Pasted image 20250630144454.png",
+    "Paper Review/2025-6-25-Linear-Time demonstration selection for in-context learning.md",
+    "Paper Reading/2025-Making Language Models Robust Against Negation.md",
+    "Paper Review/2025-5-20-DebugMate.md",
+    "AI/未命名",
+    "0-assets/BERT微调.png",
+    "Paper Reading/EAE papers",
+    "0-assets",
     "Paper Review",
     "Paper阅读/未命名",
-    "NLP/Event Argument Extraction (EAE) Task.md",
-    "NLP/NLP Concepts.md",
-    "AI/GAI.md",
-    "AI",
-    "我的第一篇笔记.md",
-    "Machine Learning/Class Imbalance.md",
-    "高亮.md",
-    "Pasted image 20250518133321.png",
-    "欢迎.md",
-    "Paper Reading",
-    "Machine Learning",
-    "Math",
-    "推荐系统",
-    "Deep Learning",
-    "创建链接.md",
-    "未命名.canvas",
-    "NLP"
+    "AI"
   ]
 }

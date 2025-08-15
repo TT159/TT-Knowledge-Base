@@ -9,14 +9,17 @@ tags:
 
 In this paper, we experiment with seamless strategies that incorporate affirmative interpretations (i.e., paraphrases without negation) to make models more robust against negation.
 
-用否定词改写句子，但不使用否定词。
 
 **作者的目标**是：把带有否定的句子，用**不带否定词的句子**进行改写（paraphrase），以增强自然语言理解系统在遇到否定时的鲁棒性。
 
 用一个不包含否定的改写来补充包含否定的输入。
 
+For example:
+I don't like this movie. <=> This movie is boring.
+
 Affirmative interpretations are obtained automatically
 
+==提出得到不含否定的否定句子的改写句的方法，然后再将这种affirmative term作为辅助信息，用CondaQA等QA benchmarks进行评估，看是否这种affirmative terms或者说这种改写信息能否提高模型对否定的理解能力。==
 
 ## Background
 
@@ -136,6 +139,22 @@ CondaQA 是一个 **问答（QA）数据集**。
 - **数据结构**：构造**成对对比样本**（contrastive pairs），每对中只有一个因素不同 —— 是否包含 negation，用以分析模型对“否定”理解的敏感性和鲁棒性。
 
 ---
+
+## Experiment
+
+We use RoBERTa-Large (Liu et al., 2019) as the base model. In addition to experimenting with the original inputs for a task (e.g., passage and question from CondaQA), we **couple** the original input with one affirmative interpretation of the sentence with negation (if any; no change otherwise). Affirmative interpretations are **concatenated** to the original input after the \<sep\> special token. Our approach is the same regardless of the type of negation.
+作者在使用 **RoBERTa-Large** 模型进行自然语言理解任务（如 CondaQA）时，为了增强模型对**否定句的理解能力**，引入了一个额外策略：**将“肯定解释”（affirmative interpretation）作为辅助输入**。
+
+做了增强处理：
+- **如果输入中包含否定句**，就会取出其中的一句否定句，并使用一个**对应的肯定解释**；
+- 然后将这个肯定解释**附加到原始输入上**；
+- **如果没有否定句**，则不做任何修改。
+
+无论是什么形式的否定（单词、前缀、词组、词汇化否定等），他们都使用同样的策略来处理：
+	如果句子中含有否定结构，就找出对它生成的肯定解释并拼接进模型输入。
+
+ However, not all of the improvements are statistically significant. The only statistically significant improvements are with (1) the scope edit type when trained with P+Q+A_CG or A_CG and tested with P+Q+ACG, and (2) the affirmative edit type when trained with P+Q+A_HB and tested with P+Q+A_HB
+
 
 ## Limitations & Future work
 

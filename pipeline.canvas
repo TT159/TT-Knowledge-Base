@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"db23ab0a53137649","type":"group","x":-800,"y":-285,"width":810,"height":300,"label":"Training"},
+		{"id":"b19b70d05399a8ec","type":"group","x":-100,"y":-310,"width":380,"height":350,"label":"Evaluation"},
+		{"id":"2a20d5d869e6f07e","type":"text","text":"Multi-word Negation","x":-510,"y":-265,"width":220,"height":50,"color":"#2173de"},
+		{"id":"1a17c57a66135f7a","type":"text","text":"Single-word Negation","x":-510,"y":-165,"width":220,"height":50,"color":"5"},
+		{"id":"e7522069f2ba33bd","type":"text","text":"Affixal Negation","x":-510,"y":-65,"width":220,"height":50,"color":"6"},
+		{"id":"4ffb95f9957a652e","type":"file","file":"Distribution of Negation Types (by sample count).png","x":-780,"y":-242,"width":250,"height":227},
+		{"id":"8d74bea898b0477b","type":"text","text":"Model","x":-240,"y":-265,"width":120,"height":50,"color":"2"},
+		{"id":"f4b45118107d23b6","type":"text","text":"Model","x":-240,"y":-165,"width":120,"height":50,"color":"2"},
+		{"id":"b00818f4952c2e1f","type":"text","text":"Model","x":-240,"y":-65,"width":120,"height":50,"color":"2"},
+		{"id":"e4eae9e58ba483b8","type":"text","text":"   **Benchmarks**: \n   \n   CondaQA ....\n   ","x":40,"y":-215,"width":200,"height":150}
+	],
+	"edges":[
+		{"id":"9d1bc8e6efbe7af2","fromNode":"1a17c57a66135f7a","fromSide":"right","toNode":"f4b45118107d23b6","toSide":"left","color":"5"},
+		{"id":"4364d8e901537609","fromNode":"2a20d5d869e6f07e","fromSide":"right","toNode":"8d74bea898b0477b","toSide":"left","color":"#1479e6"},
+		{"id":"7b1f03f73d5fea73","fromNode":"e7522069f2ba33bd","fromSide":"right","toNode":"b00818f4952c2e1f","toSide":"left","color":"6"},
+		{"id":"6596359728469861","fromNode":"8d74bea898b0477b","fromSide":"right","toNode":"e4eae9e58ba483b8","toSide":"top","color":"#157cd5"},
+		{"id":"9cdc67046ed10eb0","fromNode":"f4b45118107d23b6","fromSide":"right","toNode":"e4eae9e58ba483b8","toSide":"left","color":"5"},
+		{"id":"c19f2d4f2252ae84","fromNode":"b00818f4952c2e1f","fromSide":"right","toNode":"e4eae9e58ba483b8","toSide":"bottom","color":"6"}
+	]
+}

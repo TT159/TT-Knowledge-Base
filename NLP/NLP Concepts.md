@@ -221,3 +221,46 @@ I don't like this movie.  <=> This movie is boring.
 - **问答系统**（QA）：用户可能问“他做了什么”，模型需要知道“他”指的是谁；
     
 - **信息抽取**：从多个句子中识别出同一个实体参与了哪些事件。
+
+
+## 什么是NLU
+### Natural Language Understanding
+
+- **中文：自然语言理解**
+    
+- 它是 NLP 中的一个总括性概念，指的是让机器能够“理解”人类的语言，包括词汇、语法、语义、上下文等。
+    
+- 具体任务包括：
+    
+    - 句法分析（Parsing）
+        
+    - 语义角色标注（Semantic Role Labeling）
+        
+    - 情感分析（Sentiment Analysis）
+        
+    - 语义相似度计算（Semantic Similarity）
+        
+    - 问答系统（Question Answering）
+        
+    - **自然语言推理（NLI）**（这其实是 NLU 的一个子任务）
+        
+
+可以理解为：**NLU 是个大伞，涵盖了多种语言理解的子任务**。
+
+
+## 什么是NLI (Nature Language Inference)
+
+- **中文：自然语言推理**
+    
+- 它是 NLU 的一个子任务，专门研究：**给定一对句子（前提和假设），模型能否判断它们之间的逻辑关系。**
+    
+- 逻辑关系通常有三种：
+    
+    - **Entailment（蕴含）**：假设可以从前提中推断出来
+        
+    - **Contradiction（矛盾）**：假设与前提冲突
+        
+    - **Neutral（中立）**：假设与前提既不冲突也不能直接推断出来
+        
+
+常见的数据集：SNLI（Stanford Natural Language Inference）、MNLI（Multi-Genre Natural Language Inference）。

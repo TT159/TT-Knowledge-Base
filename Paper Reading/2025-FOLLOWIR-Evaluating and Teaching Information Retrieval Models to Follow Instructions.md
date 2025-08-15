@@ -4,13 +4,18 @@ tags:
   - InformationRetrieve
 ---
 
-
 # Main Content
 
 **search with instruction** / **instructions for retrieval**
 
-
 retrieve with instructions would enable support for more complex information needs.
+
+
+**Motivation**
+
+- Real-world IR tasks (e.g., finding specific legal or medical documents) often require nuanced instructions that go beyond simple keyword queries.
+- Existing benchmarks for IR do not evaluate models' ability to follow instructions, making it hard to measure or improve instruction-following.
+- The authors aim to bridge this gap by creating a benchmark to systematically evaluate IR models' ability to follow complex instructions.
 
 
 ## Background
@@ -21,6 +26,7 @@ thus limiting their ability to satisfy complex information needs.
 
 许多现代LMs（如GPT）可以很好地跟随用户指令。然而，IR社区虽然大量使用LMs，但大多数只用作“相似度计算器”，没有利用LM的指令跟随能力。现实中的信息需求复杂，需要能够理解和遵循复杂指令的IR系统。
 
+Current IR systems often disregard detailed instructions that could help refine document relevance judgments.
 现有IR模型大多只处理简短或形式化的检索指令（甚至忽视指令），缺乏评估检索系统是否真正“遵循指令”的基准测试。
 
 1) Recent work has started to move towards search with instructions, but this **topic is still understudied** with only a handful of papers. 
@@ -47,23 +53,46 @@ if annotators can use these TREC instructions to annotate document relevance, so
    develop a new evaluation framework, p-MRR. measuring rank-wise score changes of documents given a pair of different instructions with the same query.
 
 
+## Method
 
+- Developed **FollowIR**, a benchmark derived from three high-quality TREC collections (Robust 2004, Common Core 2017, News 2021) that provide detailed human-written instructions (narratives) for professional annotators.
+    
+- Curated modified instructions by adding constraints that shift document relevance, requiring re-annotation of some documents (to indicate their relevance changes).
+    
+- Proposed a **pairwise evaluation metric (p-MRR)** to assess whether IR models correctly adjust relevance rankings when instructions change.
+    
+- Evaluated various IR models (BM25, MonoBERT, TART, GritLM-7B, and APIs) with and without instruction-based training.
+    
+- Additionally trained **FollowIR-7B**, a new instruction-tuned IR model using synthetic data derived from GPT-3.5 and filtered by Mistral-7B-instruct-v0.2.
 
+## Experiments
 
+- Evaluated models on standard IR metrics (e.g., MAP, nDCG@5) and p-MRR using the FollowIR benchmark.
+    
+- Models with over 3 billion parameters or those tuned on instructions (e.g., FLAN-T5, Mistral-7B-instruct) performed better on instruction-following.
+    
+- Smaller or non-instruction-tuned models often treated instructions as keywords rather than understanding their semantic intent.
+    
+- Fine-tuning on longer instructions (via FollowIR-7B) improved both retrieval quality and instruction-following ability.
+    
+- Additional analysis on BEIR datasets showed similar trends of instruction misinterpretation by most models.
 
+## Limitations
 
+- Only evaluated on English TREC datasets; results may not generalize to other languages or domains.
+    
+- Evaluation focuses on reranking rather than full retrieval, due to practical and licensing constraints.
+    
+- Annotation errors may exist due to reliance on prior TREC judgments and synthetic data generation.
+    
 
+### 7. Summary
 
-
-
-
-
-
-
-
-
-
-
+- The paper highlights that most current IR models do not effectively follow instructions, often defaulting to keyword-based approaches.
+    
+- The FollowIR benchmark, dataset, and model provide tools for systematically evaluating and improving instruction-following in IR.
+    
+- Results suggest that instruction-following can be significantly improved with dedicated fine-tuning and large instruction-tuned models.
 
 
 ## Additional knowledge
@@ -116,7 +145,6 @@ ad-hoc retrieval benchmarks
 |**在论文中**|narrative 被用作IR模型的“指令”，测试模型能否像人类一样理解并按照指令完成检索任务。|
 
 ---
-
 
 ### Text REtrieval Conference (TREC)
 

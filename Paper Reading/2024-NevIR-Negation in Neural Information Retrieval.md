@@ -29,14 +29,21 @@ Then crowdsource **query annotations** for the two documents in pair, where each
 
 
 **Goal:**
-Test whether models correctly rank the documents when accounting for the negation.
+==Test whether models correctly rank the documents when accounting for the negation.==
 
+
+Contributions:
+- Introduced the first systematic benchmark (NevIR) for evaluating negation in neural IR.
+- Demonstrated that most state-of-the-art IR models struggle with negation, often performing worse than random ranking.
+- Showed that even cross-encoders, while the best among models tested, achieve only ~50% pairwise accuracy and require significant compute.
+- Provided insights into why models fail (e.g., ColBERT’s MaxSim operator ignores negation words).
 
 They test negation in neural IR using **a contrastive evaluation framework**, which has shown great utility in understanding neural models
 通过对比评估框架在神经信息检索中进行测试否定，这一方法在理解神经模型方面展现了显著的实用性。
 
 Contrastive evaluations can provide important insight into understanding and improving neural models.
 
+![[NevIR.png]]
 
 ## Background
 
@@ -44,9 +51,33 @@ As modern IR models use LMs as the backbone of their architectures, it is intuit
 
 To the best of our knowledge, there is little to no published work on negation for neural models.
 
+## Motivation
+
+- Negation understanding is essential because misunderstandings can lead to serious misinterpretations in high-stakes domains (e.g., medical advice).
+    
+- Examples include search systems that incorrectly rank documents with or without negation, producing potentially dangerous recommendations.
+    
+- The authors aim to create a benchmark to evaluate and improve how neural IR models handle negation.
+
+## Method
+- Developed **NevIR**, a contrastive benchmark dataset built from pairs of documents differing only in negation (from CondaQA).
+    
+- Collected human-annotated queries using Amazon Mechanical Turk, ensuring that each query is only answerable by one of the two documents.
+    
+- Implemented a “pairwise accuracy” metric: a model must correctly rank both queries for a pair to be considered correct.
+    
+- Evaluated a wide range of IR models including sparse (TF-IDF, SPLADE), bi-encoders, late interaction (ColBERT), and cross-encoders (MonoT5).
+
 ## Experiment
 
-### Matric 
+- Evaluated multiple models on the NevIR benchmark.
+- Cross-encoders performed best (up to 50.6% accuracy with MonoT5-3B).
+- Bi-encoders and sparse models performed significantly worse, often close to random.
+- Fine-tuning on negation data improved performance but still lagged behind human accuracy (100%).
+- Analyzed model size effects: larger models like MonoT5-3B showed better results but were less practical for real-time systems.
+- Conducted error analysis showing that models often failed to account for negation even after fine-tuning.
+
+### Metric 
 In early investigations we observed that IR models tended to rank one document above the other for both queries. 
 
 This motivates our usage of a **pairwise accuracy score** to avoid score inflation when models don’t actually understand the negation.
@@ -57,8 +88,25 @@ This motivates our usage of a **pairwise accuracy score** to avoid score inflati
 if the model has correctly ranked the documents for both queries (flipping the order of the ranking when given the negated query) we know that the model has correctly understood the negation and the pair is marked as correct.
 如果模型能在两次排序中翻转排序顺序（即在肯定问题里Doc A排第一，在否定问题里Doc B排第一），就算模型理解了“否定”。
 
-## Questions
+---
 
+## Limitations
+
+- Focused on English and primarily evaluated document pairs rather than large collections with recall-focused tasks.
+    
+- Did not cover every possible IR model or training regime due to time constraints.
+    
+- Limited to a relatively small dataset by contrastive design; future work could expand to larger collections and explore multilingual settings.
+
+## Summary
+
+- This work highlights the significant challenge that negation poses to modern neural IR systems.
+- Even top-performing models struggle to handle negation consistently, often performing worse than random.
+- The NevIR benchmark provides a valuable resource for evaluating and improving negation understanding in IR.
+- Future research is needed to build more robust models and to incorporate negation handling into broader retrieval tasks.
+
+---
+## thoughts
 In early investigations we observed that IR models tended to rank one document above the other for both queries.
 无论问题是否包含否定，IR模型往往都会把同一篇文档排在另一篇文档的上面。
 - 也就是说，如果你有两个文档（Doc A和Doc B），不管query是“否定版”还是“肯定版”，模型可能一直把Doc A排在前面（或者一直把Doc B排在前面）。
@@ -130,7 +178,7 @@ IR模型确实在架构上使用了LM作为骨干（比如bi-encoder、cross-enc
     - 代码生成
     - 文本摘要、写作辅助
     - 解释或推理复杂问题
-
+---
 #### 🔹 IR系统流程
 
 1. **两阶段检索（典型架构）**：
@@ -158,6 +206,7 @@ IR系统计算成本更低，（高并发可用），尤其在第一阶段。而
 ✅ **IR系统**：文档检索（信息查找）+ 高效率 = 适合大规模文档库。  
 ✅ **ChatGPT**：直接生成答案（基于模型内部的知识）
 
+---
 
 IR是在已有的人类建立的知识库/文档库里进行检索，找出最相关的文档或句子作为输出，而不会自己去生成句子，不存在大模型所存在的hallucination的问题
 
@@ -189,7 +238,7 @@ Retrieval-Augmented Generation确实是**生成模型与IR结合**的一种典�
 
 3. 这样既结合了文档的可追溯性，又借助了大模型的语言生成能力。
 
-🔎 **RAG vs. ChatGPT**
+ **RAG vs. ChatGPT**
 
 - **ChatGPT** 是一个单纯的生成模型，回答只依赖模型训练时的知识。
 - **RAG** 则在生成前先做检索，用检索结果丰富上下文，回答更可追溯，也减少了hallucination的风险。
@@ -278,15 +327,15 @@ BEIR数据集覆盖了18个不同的IR任务，包括：
 
 这句话的背景是和 BEIR 这样的多任务、多领域 benchmark 进行对比时提出来的。
 
-🔍 MS MARCO 的特点：  
+ MS MARCO 的特点：  
 ✅ 主要是**检索网页段落**，大多是**开放域常识问题**（比如旅游、健康、科技等）。  
 ✅ 训练集、开发集和测试集都是**同一种问题类型**，数据来源统一，查询风格也比较相似。  
 ✅ 主要任务是**passage ranking**。
 
 相比之下：  
-🚫 不涉及多个领域（法律、医疗、科学论文、对话、观点辩论等）。  
-🚫 不涉及复杂的跨领域、多语言、多任务的泛化问题。  
-🚫 不含结构化知识、图表等复杂场景。
+ 不涉及多个领域（法律、医疗、科学论文、对话、观点辩论等）。  
+ 不涉及复杂的跨领域、多语言、多任务的泛化问题。  
+ 不含结构化知识、图表等复杂场景。
 
 所以在论文里，当我们说“MS MARCO是单一的”，其实就是指它：
 
@@ -324,13 +373,17 @@ NevIR专门设计了**对比文档对**（例如包含否定词和不包含否�
 #### DEV在IR实验中的用途
 
 在信息检索（IR）或者NLP任务中：  
-✅ 训练集（Train）：用于训练模型的权重。  
+✅ 训练集（Train）：用于训练模型的权重。模型通过不断在训练集上进行前向传播和反向传播，来学习语言模式或任务逻辑。
+
 ✅ 开发集（Dev）：用于模型开发时的验证，如：
 
 - 监控模型的效果（比如pairwise accuracy）。
 - 选择最优超参数（比如学习率、batch size）。
 - 避免过拟合。  
-    ✅ 测试集（Test）：只在最后一次评估模型性能时使用，不能用于模型开发或调参。
+不会用于更新模型参数。训练过程中定期评估模型在 `dev` 上的表现（如准确率、F1 分数）。
+
+✅ 测试集（Test）：只在最后一次评估模型性能时使用，不能用于模型开发或调参。在模型训练和调参结束后，**仅评估一次**。
+- **注意**：不能提前“窥视”或调参，避免数据泄露。
 
 #### 这篇论文的使用
 
@@ -345,8 +398,11 @@ NevIR专门设计了**对比文档对**（例如包含否定词和不包含否�
 **DEV列表示开发集**，用来调参和监控模型的性能。  
 在信息检索、NLP等实验里是非常常见的标准做法，保证模型性能评估的客观性和泛化能力。
 
+- **训练阶段**：用 `train` 训练模型，用 `dev` 监控效果、做 early stopping。
+- **调参完成后**：选出在 `dev` 表现最好的模型，在 `test` 上进行最终评估。
 
-
+- 在 NLP 或一些 benchmark（如 SQuAD, GLUE, CoNLL）中，习惯把验证集命名为 `dev`（development）集，强调它是在“开发阶段”用于评估的。
+- 在通用机器学习中则更习惯叫 `validation`。
 
 
 ## 好词好句
@@ -355,7 +411,7 @@ NevIR专门设计了**对比文档对**（例如包含否定词和不包含否�
 		We hope that our analysis will spur increased attention to the problem of negation in information retrieval and provide a dataset for IR training and evaluation. 我们希望我们的分析将刺激人们对信息检索中的否定问题更多的关注，并提供一个IR训练和评估的数据集。
 	counterarguments	n. 反论点，反驳
 	surge n. 汹涌；激增；大量；奔涌向前 v. 汹涌；使强烈地感到；激增；飞涨
-		there has been a surge of interest in retrieval augmented language models 人们对检索增强型语言模型的兴趣激增
+		there has been a surge of interest in retrieval augmented language models 人们对检索增强型语言模型的兴趣激增
 	intertwine v. 缠结在一起
 		as LMs and IR systems become more intertwined and used in production, understanding and improving their failure cases (such as negation) becomes crucial for both companies and users. 随着LM和IR系统越来越相互交织并被用于生产，理解和改进它们的故障案例（如否定）对企业和用户来说都至关重要。
 	lexical adj. 词汇的；具词典性质的，词典的
